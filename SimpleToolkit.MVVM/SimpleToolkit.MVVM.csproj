@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Title>SimpleToolkit.MVVM</Title>
+        <Authors>Mateusz Skoczek</Authors>
+        <Copyright>Mateusz Skoczek</Copyright>
+        <PackageProjectUrl>https://repos.mateuszskoczek.com/SimpleToolkit/</PackageProjectUrl>
+        <PackageLicenseUrl>https://repos.mateuszskoczek.com/SimpleToolkit/SimpleToolkit.MVVM/src/branch/main/LICENSE</PackageLicenseUrl>
+        <PackageIcon>icon.png</PackageIcon>
+        <RepositoryUrl>https://repos.mateuszskoczek.com/SimpleToolkit/SimpleToolkit.MVVM</RepositoryUrl>
+        <Description>Set of helpers, class extensions, UI controls used in my other C# projects - MVVM architecture models and helper classes</Description>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="icon.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Update="README.md">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
+</Project>
