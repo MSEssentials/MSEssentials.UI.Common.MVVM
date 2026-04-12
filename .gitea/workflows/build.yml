@@ -5,13 +5,13 @@ on:
     branches:
       - "dev"
     paths:
-      - "SimpleToolkit.MVVM**"
+      - "MSEssentials.UI.Common.MVVM**"
   pull_request:
     branches:
       - "dev"
       - "main"
     paths:
-      - "SimpleToolkit.MVVM**"
+      - "MSEssentials.UI.Common.MVVM**"
 
 jobs:
   build:

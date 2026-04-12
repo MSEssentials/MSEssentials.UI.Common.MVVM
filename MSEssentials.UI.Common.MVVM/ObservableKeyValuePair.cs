@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleToolkit.MVVM
+namespace MSEssentials.UI.Common.MVVM
 {
     public class ObservableKeyValuePair<TKey, TValue> : INotifyPropertyChanged
     {

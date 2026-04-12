@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleToolkit.MVVM
+namespace MSEssentials.UI.Common.MVVM
 {
     public class ObservableDictionary<TKey, TValue> : ObservableCollection<ObservableKeyValuePair<TKey, TValue>>, IDictionary<TKey, TValue>, IEnumerable<ObservableKeyValuePair<TKey, TValue>>
     {
