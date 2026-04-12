@@ -10,14 +10,14 @@ SimpleToolkit is package of useful classes, helpers, extensions and UI controls,
 
 | Subpackage                        | Status                                                                                                                                                                                                            |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **SimpleToolkit.MVVM**            | [![NuGet version (SimpleToolkit.MVVM)](https://img.shields.io/gitea/v/release/SimpleToolkit/SimpleToolkit.MVVM?gitea_url=https%3A%2F%2Frepos.mateuszskoczek.com%2F&display_name=release&label=nuget)](https://repos.mateuszskoczek.com/SimpleToolkit/-/packages/nuget/simpletoolkit.mvvm/)                                              |
-| SimpleToolkit.Extensions          | [![NuGet version (SimpleToolkit.Extensions)](https://img.shields.io/gitea/v/release/SimpleToolkit/SimpleToolkit.Extensions?gitea_url=https%3A%2F%2Frepos.mateuszskoczek.com%2F&display_name=release&label=nuget)](https://repos.mateuszskoczek.com/SimpleToolkit/-/packages/nuget/simpletoolkit.extensions/)                            |
-| SimpleToolkit.Attributes          | [![NuGet version (SimpleToolkit.Attributes)](https://img.shields.io/gitea/v/release/SimpleToolkit/SimpleToolkit.Attributes?gitea_url=https%3A%2F%2Frepos.mateuszskoczek.com%2F&display_name=release&label=nuget)](https://repos.mateuszskoczek.com/SimpleToolkit/-/packages/nuget/simpletoolkit.attributes/)                            |
-| SimpleToolkit.UI.Models           | [![NuGet version (SimpleToolkit.UI.Models)](https://img.shields.io/gitea/v/release/SimpleToolkit/SimpleToolkit.UI.Models?gitea_url=https%3A%2F%2Frepos.mateuszskoczek.com%2F&display_name=release&label=nuget)](https://repos.mateuszskoczek.com/SimpleToolkit/-/packages/nuget/simpletoolkit.ui.models/)                               |
-| SimpleToolkit.UI.WinUI.Behaviors  | [![NuGet version (SimpleToolkit.UI.WinUI.Behaviors)](https://img.shields.io/gitea/v/release/SimpleToolkit/SimpleToolkit.UI.WinUI.Behaviors?gitea_url=https%3A%2F%2Frepos.mateuszskoczek.com%2F&display_name=release&label=nuget)](https://repos.mateuszskoczek.com/SimpleToolkit/-/packages/nuget/simpletoolkit.ui.winui.behaviors/)    |
-| SimpleToolkit.UI.WinUI.Converters | [![NuGet version (SimpleToolkit.UI.WinUI.Converters)](https://img.shields.io/gitea/v/release/SimpleToolkit/SimpleToolkit.UI.WinUI.Converters?gitea_url=https%3A%2F%2Frepos.mateuszskoczek.com%2F&display_name=release&label=nuget)](https://repos.mateuszskoczek.com/SimpleToolkit/-/packages/nuget/simpletoolkit.ui.winui.converters/) |
-| SimpleToolkit.UI.WinUI.Controls   | [![NuGet version (SimpleToolkit.UI.WinUI.Controls)](https://img.shields.io/gitea/v/release/SimpleToolkit/SimpleToolkit.UI.WinUI.Controls?gitea_url=https%3A%2F%2Frepos.mateuszskoczek.com%2F&display_name=release&label=nuget)](https://repos.mateuszskoczek.com/SimpleToolkit/-/packages/nuget/simpletoolkit.ui.winui.controls/)       |
-| SimpleToolkit.UI.WinUI.Helpers    | [![NuGet version (SimpleToolkit.UI.WinUI.Helpers)](https://img.shields.io/gitea/v/release/SimpleToolkit/SimpleToolkit.UI.WinUI.Helpers?gitea_url=https%3A%2F%2Frepos.mateuszskoczek.com%2F&display_name=release&label=nuget)](https://repos.mateuszskoczek.com/SimpleToolkit/-/packages/nuget/simpletoolkit.ui.winui.helpers/)          |
+| **SimpleToolkit.MVVM**            | [![NuGet version (SimpleToolkit.MVVM)](https://img.shields.io/nuget/v/SimpleToolkit.MVVM.svg?style=flat-square)](https://www.nuget.org/packages/SimpleToolkit.MVVM/)                                              |
+| SimpleToolkit.Extensions          | [![NuGet version (SimpleToolkit.Extensions)](https://img.shields.io/nuget/v/SimpleToolkit.Extensions.svg?style=flat-square)](https://www.nuget.org/packages/SimpleToolkit.Extensions/)                            |
+| SimpleToolkit.Attributes          | [![NuGet version (SimpleToolkit.Attributes)](https://img.shields.io/nuget/v/SimpleToolkit.Attributes.svg?style=flat-square)](https://www.nuget.org/packages/SimpleToolkit.Attributes/)                            |
+| SimpleToolkit.UI.Models           | [![NuGet version (SimpleToolkit.UI.Models)](https://img.shields.io/nuget/v/SimpleToolkit.UI.Models.svg?style=flat-square)](https://www.nuget.org/packages/SimpleToolkit.UI.Models/)                               |
+| SimpleToolkit.UI.WinUI.Behaviors  | [![NuGet version (SimpleToolkit.UI.WinUI.Behaviors)](https://img.shields.io/nuget/v/SimpleToolkit.UI.WinUI.Behaviors.svg?style=flat-square)](https://www.nuget.org/packages/SimpleToolkit.UI.WinUI.Behaviors/)    |
+| SimpleToolkit.UI.WinUI.Converters | [![NuGet version (SimpleToolkit.UI.WinUI.Converters)](https://img.shields.io/nuget/v/SimpleToolkit.UI.WinUI.Converters.svg?style=flat-square)](https://www.nuget.org/packages/SimpleToolkit.UI.WinUI.Converters/) |
+| SimpleToolkit.UI.WinUI.Controls   | [![NuGet version (SimpleToolkit.UI.WinUI.Controls)](https://img.shields.io/nuget/v/SimpleToolkit.UI.WinUI.Controls.svg?style=flat-square)](https://www.nuget.org/packages/SimpleToolkit.UI.WinUI.Controls/)       |
+| SimpleToolkit.UI.WinUI.Helpers    | [![NuGet version (SimpleToolkit.UI.WinUI.Helpers)](https://img.shields.io/nuget/v/SimpleToolkit.UI.WinUI.Helpers.svg?style=flat-square)](https://www.nuget.org/packages/SimpleToolkit.UI.WinUI.Helpers/)          |
 
 ## Features
 
@@ -26,13 +26,12 @@ SimpleToolkit is package of useful classes, helpers, extensions and UI controls,
 - 
 ## Installation and usage
 
-To download package from organization package registry, you have to add new NuGet package source. You will need access details, which you can obtain by contacting the repository owner. You can also download .nupkg file from repository Releases page.
+You can download package from official NuGet registry or .nupkg file itself from Releases tab.
 
 **CLI:**
 
 ```
-dotnet nuget add source --name SimpleToolkit --username <username> --password <password> https://repos.mateuszskoczek.com/api/packages/SimpleToolkit/nuget/index.json
-dotnet add package --source SimpleToolikt SimpleToolkit.MVVM
+dotnet add package SimpleToolkit.MVVM
 ```
 
 **Package reference in .csproj file:**
