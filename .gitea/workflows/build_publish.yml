@@ -21,8 +21,6 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
-      - name: Add package source
-        run: dotnet nuget add source --name gitea --username SimpleToolkit --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text https://repos.mateuszskoczek.com/api/packages/SimpleToolkit/nuget/index.json
       - name: Restore dependencies
         run: dotnet restore
       - name: Build
@@ -62,8 +60,6 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 8.0.x
-      - name: Add package source
-        run: dotnet nuget add source --name gitea --username SimpleToolkit --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text https://repos.mateuszskoczek.com/api/packages/SimpleToolkit/nuget/index.json
       - name: Create NuGet package
         run: dotnet pack -c Release -p:Version=${{needs.version.outputs.version}} -p:PackageVersion=${{needs.version.outputs.version}} --output ./
       - name: Upload artifact
@@ -87,10 +83,8 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 8.0.x
-      - name: Add package source
-        run: dotnet nuget add source --name gitea --username SimpleToolkit --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text https://repos.mateuszskoczek.com/api/packages/SimpleToolkit/nuget/index.json
       - name: Publish
-        run: dotnet nuget push ./SimpleToolkit.MVVM.${{needs.pack.outputs.version}}.nupkg --source gitea --api-key ${{ secrets.PACKAGES_WRITE_TOKEN }} --skip-duplicate
+        run: dotnet nuget push ./SimpleToolkit.MVVM.${{needs.pack.outputs.version}}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_KEY }}
       - name: Create Release
         uses: akkuman/gitea-release-action@v1
         with:
