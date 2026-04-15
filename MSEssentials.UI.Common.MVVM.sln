@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleToolkit.MVVM", "SimpleToolkit.MVVM\SimpleToolkit.MVVM.csproj", "{7B017D3C-E116-20B5-21F7-692316023149}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSEssentials.UI.Common.MVVM", "MSEssentials.UI.Common.MVVM\MSEssentials.UI.Common.MVVM.csproj", "{7B017D3C-E116-20B5-21F7-692316023149}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

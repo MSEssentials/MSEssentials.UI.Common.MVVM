@@ -5,21 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleToolkit.MVVM
+namespace MSEssentials.UI.Common.MVVM
 {
     public class ObservableKeyValuePair<TKey, TValue> : INotifyPropertyChanged
     {
-        #region FIELDS
-
         private TKey _key;
         private TValue _value;
 
-        #endregion
-
-
-
-        #region PROPERTIES
-
+        
         public TKey Key
         {
             get => _key;
@@ -38,12 +31,7 @@ namespace SimpleToolkit.MVVM
                 NotifyPropertyChanged(nameof(Value));
             }
         }
-
-        #endregion
-
-
-
-        #region CONSTRUCTORS
+        
 
         public ObservableKeyValuePair() : this(default, default)
         { }
@@ -54,22 +42,10 @@ namespace SimpleToolkit.MVVM
             _value = value;
         }
 
-        #endregion
-
-
-
-        #region PRIVATE METHODS
-
+        
         private void NotifyPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
-        #endregion
-
-
-
-        #region EVENTS
-
+        
         public event PropertyChangedEventHandler? PropertyChanged;
-
-        #endregion
     }
 }

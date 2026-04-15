@@ -1,37 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SimpleToolkit.MVVM
+namespace MSEssentials.UI.Common.MVVM
 {
     public class ObservableDictionary<TKey, TValue> : ObservableCollection<ObservableKeyValuePair<TKey, TValue>>, IDictionary<TKey, TValue>, IEnumerable<ObservableKeyValuePair<TKey, TValue>>
     {
-        #region PROPERTIES
-
         public ICollection<TKey> Keys => Items.Select(p => p.Key).ToList();
         public ICollection<TValue> Values => Items.Select(p => p.Value).ToList();
         public bool IsReadOnly => false;
 
-        #endregion
-
-
-
-        #region INDEXERS
-
+        
         public TValue this[TKey key]
         {
-            get
-            {
-                if (!TryGetValue(key, out TValue result))
-                {
-                    throw new ArgumentException("Key not found");
-                }
-                return result;
-            }
+            get => !TryGetValue(key, out TValue result) ? throw new ArgumentException("Key not found") : result;
             set
             {
                 if (ContainsKey(key))
@@ -45,16 +26,11 @@ namespace SimpleToolkit.MVVM
             }
         }
 
-        #endregion
-
-
-
-        #region CONSTRUCTORS
-
-        public ObservableDictionary() : base()
+        
+        public ObservableDictionary()
         { }
 
-        public ObservableDictionary(IDictionary<TKey, TValue> dictionary) : base()
+        public ObservableDictionary(IDictionary<TKey, TValue> dictionary)
         {
             foreach (KeyValuePair<TKey, TValue> pair in dictionary)
             {
@@ -62,12 +38,8 @@ namespace SimpleToolkit.MVVM
             }
         }
 
-        #endregion
-
-
-
-        #region PUBLIC METHODS
-
+        
+        public void Add(KeyValuePair<TKey, TValue> item) => Add(item.Key, item.Value);
         public void Add(TKey key, TValue value)
         {
             if (ContainsKey(key))
@@ -76,8 +48,6 @@ namespace SimpleToolkit.MVVM
             }
             Add(new ObservableKeyValuePair<TKey, TValue>(key, value));
         }
-
-        public void Add(KeyValuePair<TKey, TValue> item) => Add(item.Key, item.Value);
 
         public bool Contains(KeyValuePair<TKey, TValue> item)
         {
@@ -96,20 +66,8 @@ namespace SimpleToolkit.MVVM
             return !Equals(default(ObservableKeyValuePair<TKey, TValue>), pair);
         }
 
-        public void CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex)
-        {
+        public void CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex) => 
             throw new NotImplementedException();
-        }
-
-        public bool Remove(TKey key)
-        {
-            List<ObservableKeyValuePair<TKey, TValue>> remove = ((ObservableCollection<ObservableKeyValuePair<TKey, TValue>>)this).Where(pair => Equals(key, pair.Key)).ToList();
-            foreach (ObservableKeyValuePair<TKey, TValue> pair in remove)
-            {
-                Remove(pair);
-            }
-            return remove.Count > 0;
-        }
 
         public bool Remove(KeyValuePair<TKey, TValue> item)
         {
@@ -124,6 +82,16 @@ namespace SimpleToolkit.MVVM
             }
             return Remove(pair);
         }
+        
+        public bool Remove(TKey key)
+        {
+            List<ObservableKeyValuePair<TKey, TValue>> remove = ((ObservableCollection<ObservableKeyValuePair<TKey, TValue>>)this).Where(pair => Equals(key, pair.Key)).ToList();
+            foreach (ObservableKeyValuePair<TKey, TValue> pair in remove)
+            {
+                Remove(pair);
+            }
+            return remove.Count > 0;
+        }
 
         public bool TryGetValue(TKey key, [MaybeNullWhen(false)] out TValue value)
         {
@@ -137,16 +105,11 @@ namespace SimpleToolkit.MVVM
             return true;
         }
 
-        IEnumerator<KeyValuePair<TKey, TValue>> IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator() => ((ObservableCollection<ObservableKeyValuePair<TKey, TValue>>)this).Select(i => new KeyValuePair<TKey, TValue>(i.Key, i.Value)).GetEnumerator();
+        IEnumerator<KeyValuePair<TKey, TValue>> IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator() => 
+            ((ObservableCollection<ObservableKeyValuePair<TKey, TValue>>)this).Select(i => new KeyValuePair<TKey, TValue>(i.Key, i.Value)).GetEnumerator();
 
-        #endregion
-
-
-
-        #region PRIVATE METHODS
-
-        private ObservableKeyValuePair<TKey, TValue> GetKeyValuePairByTheKey(TKey key) => ((ObservableCollection<ObservableKeyValuePair<TKey, TValue>>)this).FirstOrDefault(i => i.Key.Equals(key));
-
-        #endregion
+        
+        private ObservableKeyValuePair<TKey, TValue> GetKeyValuePairByTheKey(TKey key) => 
+            ((ObservableCollection<ObservableKeyValuePair<TKey, TValue>>)this).FirstOrDefault(i => i.Key.Equals(key));
     }
 }
