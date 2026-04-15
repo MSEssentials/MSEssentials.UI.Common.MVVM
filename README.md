@@ -49,18 +49,18 @@
     </tr>
     <tr>
         <td>
-            MSEssentials.Attributes
+            MSEssentials.AspNetCore.Attributes
         </td>
         <td>
-            <a href="https://www.nuget.org/packages/MSEssentials.Attributes/"><img src="https://img.shields.io/nuget/v/MSEssentials.Attributes.svg?style=flat-square"></a>
+            <a href="https://www.nuget.org/packages/MSEssentials.AspNetCore.Attributes/"><img src="https://img.shields.io/nuget/v/MSEssentials.AspNetCore.Attributes.svg?style=flat-square"></a>
         </td>
     </tr>
     <tr>
         <td>
-            MSEssentials.UI.Models
+            MSEssentials.UI.Common.Converters
         </td>
         <td>
-            <a href="https://www.nuget.org/packages/MSEssentials.UI.Models/"><img src="https://img.shields.io/nuget/v/MSEssentials.UI.Models.svg?style=flat-square"></a>
+            <a href="https://www.nuget.org/packages/MSEssentials.UI.Common.Converters/"><img src="https://img.shields.io/nuget/v/MSEssentials.UI.Common.Converters.svg?style=flat-square"></a>
         </td>
     </tr>
     <tr>
@@ -87,20 +87,13 @@
             <a href="https://www.nuget.org/packages/MSEssentials.UI.WinUI.Controls/"><img src="https://img.shields.io/nuget/v/MSEssentials.UI.WinUI.Controls.svg?style=flat-square"></a>
         </td>
     </tr>
-    <tr>
-        <td>
-            MSEssentials.UI.WinUI.Helpers
-        </td>
-        <td>
-            <a href="https://www.nuget.org/packages/MSEssentials.UI.WinUI.Helpers/"><img src="https://img.shields.io/nuget/v/MSEssentials.UI.WinUI.Helpers.svg?style=flat-square"></a>
-        </td>
-    </tr>
 </table>
 
 ## Features
 
 - **ObservableKeyValuePair** - observable version of KeyValuePair
 - **ObservableDictionary** - observable version of Dictionary
+- **NavigationViewItem** - list item model (for example for navigation controls), allows to bind item to view model
 
 ## Installation and usage
 
